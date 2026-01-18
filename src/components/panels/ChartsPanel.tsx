@@ -60,7 +60,7 @@ export const ChartsPanel: React.FC<ChartsPanelProps> = ({ symbol = 'AAPL' }) => 
             </div>
           </div>
           <div className="text-right">
-            <div className="font-bold text-xl">${currentPrice.toFixed(2)}</div>
+            <div className="font-bold text-xl">₹{currentPrice.toFixed(2)}</div>
             <div className={`flex items-center justify-end gap-1 text-sm ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
               {isPositive ? <VscArrowUp size={12} /> : <VscArrowDown size={12} />}
               <span>{isPositive ? '+' : ''}{change.toFixed(2)} ({changePercent}%)</span>
@@ -127,15 +127,15 @@ export const ChartsPanel: React.FC<ChartsPanelProps> = ({ symbol = 'AAPL' }) => 
       <div className="p-4 border-t border-border grid grid-cols-4 gap-4 text-sm">
         <div>
           <span className="text-muted-foreground">Open</span>
-          <div className="font-medium">${openPrice.toFixed(2)}</div>
+          <div className="font-medium">₹{openPrice.toFixed(2)}</div>
         </div>
         <div>
           <span className="text-muted-foreground">High</span>
-          <div className="font-medium">${maxPrice.toFixed(2)}</div>
+          <div className="font-medium">₹{maxPrice.toFixed(2)}</div>
         </div>
         <div>
           <span className="text-muted-foreground">Low</span>
-          <div className="font-medium">${minPrice.toFixed(2)}</div>
+          <div className="font-medium">₹{minPrice.toFixed(2)}</div>
         </div>
         <div>
           <span className="text-muted-foreground">Volume</span>

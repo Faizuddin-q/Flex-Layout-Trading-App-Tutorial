@@ -52,7 +52,7 @@ export const TradeModal: React.FC<TradeModalProps> = ({
             {symbol}
             {strikePrice && optionType && (
               <span className="text-muted-foreground font-normal text-sm">
-                ${strikePrice} {optionType.toUpperCase()}
+                ₹{strikePrice} {optionType.toUpperCase()}
               </span>
             )}
           </DialogTitle>
@@ -62,7 +62,7 @@ export const TradeModal: React.FC<TradeModalProps> = ({
           {/* Current Price Display */}
           <div className="bg-muted/50 rounded-lg p-3 flex justify-between items-center">
             <span className="text-sm text-muted-foreground">Current Price</span>
-            <span className="font-bold text-lg">${currentPrice.toFixed(2)}</span>
+            <span className="font-bold text-lg">₹{currentPrice.toFixed(2)}</span>
           </div>
 
           {/* Order Type */}
@@ -95,7 +95,7 @@ export const TradeModal: React.FC<TradeModalProps> = ({
             <div className="grid gap-2">
               <Label htmlFor="limitPrice">Limit Price</Label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">₹</span>
                 <Input
                   id="limitPrice"
                   type="number"
@@ -125,7 +125,7 @@ export const TradeModal: React.FC<TradeModalProps> = ({
             <div className="flex justify-between items-center">
               <span className="text-sm text-muted-foreground">Estimated Total</span>
               <span className={`font-bold text-lg ${isBuy ? 'text-green-600' : 'text-red-600'}`}>
-                ${totalValue.toFixed(2)}
+                ₹{totalValue.toFixed(2)}
               </span>
             </div>
             {optionType && (

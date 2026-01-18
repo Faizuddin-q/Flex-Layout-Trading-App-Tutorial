@@ -18,7 +18,8 @@ import {
   VscSymbolMisc,
   VscDashboard,
   VscEdit,
-  VscFile
+  VscFile,
+  VscListFlat
 } from 'react-icons/vsc';
 import {
   DropdownMenu,
@@ -39,28 +40,29 @@ interface PanelConfig {
 }
 
 const tradingPanels: PanelConfig[] = [
-  { name: 'Charts - AAPL', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'AAPL' } },
-  { name: 'Charts - GOOGL', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'GOOGL' } },
-  { name: 'Charts - MSFT', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'MSFT' } },
-  { name: 'Charts - TSLA', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'TSLA' } },
+  { name: 'Charts - NIFTY', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'NIFTY' } },
+  { name: 'Charts - BANKNIFTY', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'BANKNIFTY' } },
+  { name: 'Charts - RELIANCE', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'RELIANCE' } },
+  { name: 'Charts - HDFCBANK', component: 'ChartsPanel', icon: <VscGraph size={14} />, config: { symbol: 'HDFCBANK' } },
 ];
 
 const optionPanels: PanelConfig[] = [
-  { name: 'Option Chain - AAPL', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'AAPL' } },
-  { name: 'Option Chain - GOOGL', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'GOOGL' } },
-  { name: 'Option Chain - MSFT', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'MSFT' } },
-  { name: 'Option Chain - TSLA', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'TSLA' } },
+  { name: 'Option Chain - NIFTY', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'NIFTY' } },
+  { name: 'Option Chain - BANKNIFTY', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'BANKNIFTY' } },
+  { name: 'Option Chain - FINNIFTY', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'FINNIFTY' } },
+  { name: 'Option Chain - RELIANCE', component: 'OptionChainPanel', icon: <VscSymbolMisc size={14} />, config: { symbol: 'RELIANCE' } },
 ];
 
 const depthPanels: PanelConfig[] = [
-  { name: 'Market Depth - AAPL', component: 'MarketDepthPanel', icon: <VscDashboard size={14} />, config: { symbol: 'AAPL' } },
-  { name: 'Market Depth - GOOGL', component: 'MarketDepthPanel', icon: <VscDashboard size={14} />, config: { symbol: 'GOOGL' } },
+  { name: 'Market Depth - RELIANCE', component: 'MarketDepthPanel', icon: <VscDashboard size={14} />, config: { symbol: 'RELIANCE' } },
+  { name: 'Market Depth - TCS', component: 'MarketDepthPanel', icon: <VscDashboard size={14} />, config: { symbol: 'TCS' } },
 ];
 
 const utilityPanels: PanelConfig[] = [
   { name: 'Editor', component: 'EditorPanel', icon: <VscEdit size={14} /> },
   { name: 'Console', component: 'ConsolePanel', icon: <VscTerminal size={14} /> },
   { name: 'Design', component: 'DesignPanel', icon: <VscFile size={14} /> },
+  { name: 'Watchlist', component: 'WatchlistPanel', icon: <VscListFlat size={14} /> },
 ];
 
 export const LayoutManager: React.FC = () => {

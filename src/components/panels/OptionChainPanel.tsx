@@ -58,7 +58,7 @@ const generateMockOptionChain = (basePrice: number): OptionData[] => {
 };
 
 export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({ 
-  symbol = 'AAPL',
+  symbol = 'NIFTY',
   model 
 }) => {
   const basePrice = 193.50;
@@ -112,7 +112,24 @@ export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({
       strikePrice,
       optionType,
     });
-  }, []);
+    if (model && symbol) {
+      model.doAction(FlexLayout.Actions.addNode(
+        {
+          type: 'tab',
+          component: 'market-depth',
+          name: `Depth ${symbol} ₹${strikePrice} ${optionType.toUpperCase()}`,
+          config: {
+            symbol,
+            strikePrice,
+            optionType,
+          },
+        },
+        'market-depth-tabset', // Assuming a tabset ID for market depth
+        FlexLayout.DockLocation.CENTER,
+        -1
+      ));
+    }
+  }, [model, symbol]);
 
   const expiryDates = [
     '2024-01-19',
@@ -132,7 +149,7 @@ export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({
               Option Chain <span className="text-primary">{symbol}</span>
             </h2>
             <span className="text-xs text-muted-foreground">
-              Underlying: ${basePrice.toFixed(2)} • Hover for actions
+              Underlying: ₹{basePrice.toFixed(2)} • Hover for actions
             </span>
           </div>
         </div>
@@ -236,7 +253,7 @@ export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({
                   
                   {/* Strike Price */}
                   <td className={`py-2 px-2 text-center font-bold bg-muted/50 ${isATM ? 'ring-2 ring-primary' : ''}`}>
-                    ${option.strike.toFixed(2)}
+                    ₹{option.strike.toFixed(2)}
                   </td>
                   
                   {/* Put Side */}

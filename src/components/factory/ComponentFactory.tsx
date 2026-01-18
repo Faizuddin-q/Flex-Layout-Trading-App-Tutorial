@@ -9,6 +9,7 @@ import { SearchPanel } from '../panels/SearchPanel';
 import { ChartsPanel } from '../panels/ChartsPanel';
 import { OptionChainPanel } from '../panels/OptionChainPanel';
 import { MarketDepthPanel } from '../panels/MarketDepthPanel';
+import { WatchlistPanel } from '../panels/WatchlistPanel';
 
 export const createComponentFactory = (model: Model) => (node: TabNode): React.ReactNode => {
   const componentType = node.getComponent();
@@ -48,6 +49,9 @@ export const createComponentFactory = (model: Model) => (node: TabNode): React.R
           optionType={config?.optionType}
         />
       );
+
+    case 'WatchlistPanel':
+      return <WatchlistPanel />;
 
     default:
       return (
@@ -97,6 +101,9 @@ export const componentFactory = (node: TabNode): React.ReactNode => {
           optionType={config?.optionType}
         />
       );
+
+    case 'WatchlistPanel':
+      return <WatchlistPanel />;
 
     default:
       return (

@@ -33,7 +33,7 @@ const generateMockDepth = (basePrice: number): DepthLevel[] => {
 };
 
 export const MarketDepthPanel: React.FC<MarketDepthPanelProps> = ({ 
-  symbol = 'AAPL',
+  symbol = 'RELIANCE',
   strikePrice,
   optionType 
 }) => {
@@ -67,14 +67,14 @@ export const MarketDepthPanel: React.FC<MarketDepthPanelProps> = ({
               <span className="text-primary">{symbol}</span>
               {strikePrice && optionType && (
                 <span className="text-sm font-normal text-muted-foreground">
-                  ${strikePrice} {optionType.toUpperCase()}
+                  ₹{strikePrice} {optionType.toUpperCase()}
                 </span>
               )}
             </h2>
             <span className="text-xs text-muted-foreground">10 Levels • Live Data</span>
           </div>
           <div className="text-right">
-            <div className="font-bold text-xl">${basePrice.toFixed(2)}</div>
+            <div className="font-bold text-xl">₹{basePrice.toFixed(2)}</div>
             <div className="flex items-center justify-end gap-1 text-sm text-green-600">
               <VscArrowUp size={12} />
               <span>+0.85 (0.44%)</span>
@@ -132,7 +132,7 @@ export const MarketDepthPanel: React.FC<MarketDepthPanelProps> = ({
                   
                   {/* Price */}
                   <td className="text-center py-1.5 px-2 font-bold bg-muted/30">
-                    ${level.price.toFixed(2)}
+                    ₹{level.price.toFixed(2)}
                   </td>
                   
                   {/* Ask Quantity with bar */}

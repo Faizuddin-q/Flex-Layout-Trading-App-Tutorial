@@ -2,44 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
     /* RED THEME (Default) - Pastel Base / Dark Accents */
     --background: 0 82% 97%;
     --foreground: 0 56% 23%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 0 56% 23%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 0 56% 23%;
-    
+
     --primary: 0 72% 51%;
     --primary-foreground: 0 0% 100%;
-    
+
     --secondary: 0 50% 95%;
     --secondary-foreground: 0 56% 23%;
-    
+
     --muted: 0 30% 93%;
     --muted-foreground: 0 30% 40%;
-    
+
     --accent: 0 72% 51%;
     --accent-foreground: 0 0% 100%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --border: 0 40% 85%;
     --input: 0 40% 85%;
     --ring: 0 72% 51%;
-    
+
     --radius: 0.5rem;
-    
+
     /* IDE Specific Tokens */
     --ide-bg: 0 82% 97%;
     --ide-panel: 0 0% 100%;
@@ -66,28 +66,28 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  [data-theme='gray'] {
+  [data-theme="gray"] {
     --background: 220 14% 96%;
     --foreground: 220 14% 15%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 220 14% 15%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 220 14% 15%;
-    
+
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    
+
     --secondary: 220 14% 93%;
     --secondary-foreground: 220 14% 15%;
-    
+
     --muted: 220 14% 93%;
     --muted-foreground: 220 14% 45%;
-    
+
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
-    
+
     --border: 220 14% 85%;
     --input: 220 14% 85%;
     --ring: 217 91% 60%;
@@ -108,28 +108,28 @@
     --ide-console-text: 142 70% 65%;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --background: 220 15% 8%;
     --foreground: 220 10% 90%;
-    
+
     --card: 220 15% 12%;
     --card-foreground: 220 10% 90%;
-    
+
     --popover: 220 15% 12%;
     --popover-foreground: 220 10% 90%;
-    
+
     --primary: 0 72% 60%;
     --primary-foreground: 0 0% 100%;
-    
+
     --secondary: 220 15% 18%;
     --secondary-foreground: 220 10% 90%;
-    
+
     --muted: 220 15% 18%;
     --muted-foreground: 220 10% 60%;
-    
+
     --accent: 0 72% 60%;
     --accent-foreground: 0 0% 100%;
-    
+
     --border: 220 15% 22%;
     --input: 220 15% 22%;
     --ring: 0 72% 60%;
