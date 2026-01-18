@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* RED THEME (Default) - Pastel Base / Dark Accents */
+    --background: 0 82% 97%;
+    --foreground: 0 56% 23%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 56% 23%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 56% 23%;
+    
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 50% 95%;
+    --secondary-foreground: 0 56% 23%;
+    
+    --muted: 0 30% 93%;
+    --muted-foreground: 0 30% 40%;
+    
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 40% 85%;
+    --input: 0 40% 85%;
+    --ring: 0 72% 51%;
+    
+    --radius: 0.5rem;
+    
+    /* IDE Specific Tokens */
+    --ide-bg: 0 82% 97%;
+    --ide-panel: 0 0% 100%;
+    --ide-tab-bar: 0 50% 93%;
+    --ide-tab-unselected: 0 50% 93%;
+    --ide-tab-selected: 0 0% 100%;
+    --ide-splitter: 0 40% 85%;
+    --ide-splitter-hover: 0 60% 80%;
+    --ide-drag-rect: 0 72% 51% / 0.2;
+    --ide-border: 0 40% 85%;
+    --ide-text-primary: 0 56% 23%;
+    --ide-text-secondary: 0 30% 45%;
+    --ide-text-accent: 0 72% 51%;
+    --ide-console-bg: 220 15% 10%;
+    --ide-console-text: 142 70% 65%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  [data-theme='gray'] {
+    --background: 220 14% 96%;
+    --foreground: 220 14% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 15%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 14% 93%;
+    --secondary-foreground: 220 14% 15%;
+    
+    --muted: 220 14% 93%;
+    --muted-foreground: 220 14% 45%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 220 14% 85%;
+    --input: 220 14% 85%;
+    --ring: 217 91% 60%;
+
+    --ide-bg: 220 14% 96%;
+    --ide-panel: 0 0% 100%;
+    --ide-tab-bar: 220 14% 91%;
+    --ide-tab-unselected: 220 14% 91%;
+    --ide-tab-selected: 0 0% 100%;
+    --ide-splitter: 220 14% 85%;
+    --ide-splitter-hover: 220 14% 80%;
+    --ide-drag-rect: 217 91% 60% / 0.2;
+    --ide-border: 220 14% 85%;
+    --ide-text-primary: 220 14% 15%;
+    --ide-text-secondary: 220 14% 45%;
+    --ide-text-accent: 217 91% 60%;
+    --ide-console-bg: 220 15% 10%;
+    --ide-console-text: 142 70% 65%;
+  }
+
+  [data-theme='dark'] {
+    --background: 220 15% 8%;
+    --foreground: 220 10% 90%;
+    
+    --card: 220 15% 12%;
+    --card-foreground: 220 10% 90%;
+    
+    --popover: 220 15% 12%;
+    --popover-foreground: 220 10% 90%;
+    
+    --primary: 0 72% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 220 10% 90%;
+    
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+    
+    --accent: 0 72% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 0 72% 60%;
+
+    --ide-bg: 220 15% 8%;
+    --ide-panel: 220 15% 12%;
+    --ide-tab-bar: 220 15% 15%;
+    --ide-tab-unselected: 220 15% 18%;
+    --ide-tab-selected: 220 15% 12%;
+    --ide-splitter: 220 15% 22%;
+    --ide-splitter-hover: 220 15% 30%;
+    --ide-drag-rect: 0 72% 60% / 0.2;
+    --ide-border: 220 15% 22%;
+    --ide-text-primary: 220 10% 90%;
+    --ide-text-secondary: 220 10% 60%;
+    --ide-text-accent: 0 72% 60%;
+    --ide-console-bg: 220 15% 6%;
+    --ide-console-text: 142 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+/* FlexLayout Overrides */
+.flexlayout__layout {
+  background-color: hsl(var(--ide-bg)) !important;
+  color: hsl(var(--ide-text-primary)) !important;
+  font-family: var(--font-sans) !important;
+}
+
+.flexlayout__tabset_header {
+  background-color: hsl(var(--ide-tab-bar)) !important;
+  border-bottom: 1px solid hsl(var(--ide-border)) !important;
+  box-shadow: none !important;
+}
+
+.flexlayout__tabset_header_content {
+  padding: 0 4px !important;
+}
+
+.flexlayout__tab_button {
+  background-color: hsl(var(--ide-tab-unselected)) !important;
+  color: hsl(var(--ide-text-secondary)) !important;
+  border: none !important;
+  border-radius: 6px 6px 0 0 !important;
+  margin: 4px 2px 0 2px !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+}
+
+.flexlayout__tab_button:hover {
+  background-color: hsl(var(--ide-tab-selected)) !important;
+  color: hsl(var(--ide-text-primary)) !important;
+}
+
+.flexlayout__tab_button--selected {
+  background-color: hsl(var(--ide-tab-selected)) !important;
+  color: hsl(var(--ide-text-primary)) !important;
+  box-shadow: 0 -2px 0 0 hsl(var(--ide-text-accent)) inset !important;
+}
+
+.flexlayout__tab_button_trailing {
+  opacity: 0.5 !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.flexlayout__tab_button:hover .flexlayout__tab_button_trailing {
+  opacity: 1 !important;
+}
+
+.flexlayout__tabset {
+  background-color: hsl(var(--ide-panel)) !important;
+  border: 1px solid hsl(var(--ide-border)) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.flexlayout__tab {
+  background-color: hsl(var(--ide-panel)) !important;
+}
+
+.flexlayout__splitter {
+  background-color: hsl(var(--ide-bg)) !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.flexlayout__splitter:hover {
+  background-color: hsl(var(--ide-splitter-hover)) !important;
+}
+
+.flexlayout__splitter_drag {
+  background-color: hsl(var(--ide-text-accent)) !important;
+}
+
+.flexlayout__drag_rect {
+  background: hsla(var(--ide-drag-rect)) !important;
+  border: 2px dashed hsl(var(--ide-text-accent)) !important;
+  border-radius: 6px !important;
+}
+
+.flexlayout__border {
+  background-color: hsl(var(--ide-bg)) !important;
+}
+
+.flexlayout__border_button {
+  background-color: hsl(var(--ide-tab-unselected)) !important;
+  color: hsl(var(--ide-text-secondary)) !important;
+  border: 1px solid hsl(var(--ide-border)) !important;
+  border-radius: 6px !important;
+  margin: 4px !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.flexlayout__border_button--selected {
+  background-color: hsl(var(--ide-tab-selected)) !important;
+  color: hsl(var(--ide-text-accent)) !important;
+  border-color: hsl(var(--ide-text-accent)) !important;
+}
+
+.flexlayout__border_inner {
+  background-color: hsl(var(--ide-panel)) !important;
+  border: 1px solid hsl(var(--ide-border)) !important;
+}
+
+.flexlayout__popup_menu {
+  background-color: hsl(var(--ide-panel)) !important;
+  border: 1px solid hsl(var(--ide-border)) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2) !important;
+  padding: 4px !important;
+}
+
+.flexlayout__popup_menu_item {
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  color: hsl(var(--ide-text-primary)) !important;
+}
+
+.flexlayout__popup_menu_item:hover {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.flexlayout__tabset_maximized {
+  border: 2px solid hsl(var(--ide-text-accent)) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--ide-splitter));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--ide-splitter-hover));
+}
