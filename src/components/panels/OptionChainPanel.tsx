@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { VscTriangleDown, VscTriangleUp } from 'react-icons/vsc';
 import { TradeModal } from '../modals/TradeModal';
+import { MarketDepthModal } from '../modals/MarketDepthModal';
 import * as FlexLayout from 'flexlayout-react';
 
 interface OptionChainPanelProps {
@@ -80,6 +81,16 @@ export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({
     price: 0,
   });
 
+  const [marketDepthModal, setMarketDepthModal] = useState<{
+    open: boolean;
+    strikePrice: number;
+    optionType: 'call' | 'put';
+  }>({
+    open: false,
+    strikePrice: 0,
+    optionType: 'call',
+  });
+
   const openTradeModal = (
     type: 'buy' | 'sell',
     optionType: 'call' | 'put',
@@ -96,27 +107,12 @@ export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({
   };
 
   const openMarketDepth = useCallback((strikePrice: number, optionType: 'call' | 'put') => {
-    if (model) {
-      model.doAction(
-        FlexLayout.Actions.addNode(
-          {
-            type: 'tab',
-            component: 'MarketDepthPanel',
-            name: `Depth ${symbol} $${strikePrice} ${optionType.toUpperCase()}`,
-            config: {
-              symbol,
-              strikePrice,
-              optionType,
-            },
-            enableClose: true,
-          },
-          'workspace',
-          FlexLayout.DockLocation.CENTER,
-          -1
-        )
-      );
-    }
-  }, [model, symbol]);
+    setMarketDepthModal({
+      open: true,
+      strikePrice,
+      optionType,
+    });
+  }, []);
 
   const expiryDates = [
     '2024-01-19',
@@ -314,6 +310,15 @@ export const OptionChainPanel: React.FC<OptionChainPanelProps> = ({
         strikePrice={tradeModal.strikePrice}
         optionType={tradeModal.optionType}
         currentPrice={tradeModal.price}
+      />
+
+      {/* Market Depth Modal */}
+      <MarketDepthModal
+        open={marketDepthModal.open}
+        onClose={() => setMarketDepthModal(prev => ({ ...prev, open: false }))}
+        symbol={symbol}
+        strikePrice={marketDepthModal.strikePrice}
+        optionType={marketDepthModal.optionType}
       />
     </div>
   );
